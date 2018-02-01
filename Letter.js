@@ -1,7 +1,15 @@
-function letter(userGuess) {
+var letterToBeGuessed = 
+
+
+
+
+
+
+function (userGuess) {
+    //Created a new variable with set false as the defualt value
     var isLetterInWord = false;
     for (var i = 0; i < numBlanks; i++) {
-        if (wordChosen[i] == userGuess) {
+        if (this.word[i] == userGuess) {
             isLetterInWord = true;
         }
     }
@@ -14,6 +22,8 @@ function letter(userGuess) {
         }
     } else {
         wrongGuesses.push(userGuess);
-        guessesLeft--;
+        this.guesses--;
     }
 }
+
+module.exports = letterToBeGuessed;
