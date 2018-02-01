@@ -19,7 +19,7 @@ function Game() {
         Math.floor(Math.random() * Word.length);
     }
 
-    this.guess = function () {
+    this.guess = function (guess) {
         // input letter with inquirer check to see if inside of letters array.
         inquirer.prompt(
             {
@@ -28,6 +28,9 @@ function Game() {
                name: "letter"
             }
         ).then(
+        //     if(guess.letter) {
+
+        //     }
 
         )
         // if true, reprint word with guessed letter included
