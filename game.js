@@ -1,7 +1,12 @@
-var inquirer = require('inquirer');
-var Word = require('./Word.js')
+//Runs Inquirer to ask the questions
+var inquirer = require("inquirer");
+//requires the word file to get selected words
+var Word = require("./Word.js");
+//requires the letter file to check if you got it right or not
+var Letter = require("./Letter.js");
 
 function Game () {
+
     this.selectedWord = new Word;
 
     this.letter = selectedWord.split('');
@@ -11,6 +16,7 @@ function Game () {
 
     this.getRandomWord = function () {
     // grab word from Word.js make it a new word object
+        Math.floor(Math.random() * Word.length);
     }
 
     this.guess = function () {
