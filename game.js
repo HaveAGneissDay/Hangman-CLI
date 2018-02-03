@@ -4,19 +4,16 @@ var inquirer = require("inquirer");
 var Word = require("./Word.js");
 //requires the letter file to check if you got it right or not
 var Letter = require("./Letter.js");
-
 function Game() {
 
-    this.selectedWord = new Word;
-
-    this.toBeGuessed = selectedWord.split('');
+   var chosenWord = "";
     this.guesses = 10;
     this.wins = 0;
     this.loses = 0;
-    this.blanks =[];
-    this.getRandomWord = function () {
+    this.blanks = [];
+    this.getSelectedWord = function () {
     // grab word from Word.js make it a new word object
-        Math.floor(Math.random() * Word.length);
+       return chosenWord = [Math.floor(Math.random() * Word.length)].split('');
     }
 
     this.guess = function (guess) {
@@ -48,12 +45,12 @@ function Game() {
 
             //get a random word
             if(input.confirm) {
-        this.getRandomWord();
-        //then slpit the word
-        this.toBeGuessed.forEach(function(e){
-          blanks.push('_');
-        });
-        blanks.join(' ');   
+                
+                for (var i = 0; i < chosenWord.length; i++) {
+                    this.blanks.push("_");
+                    console.log(this.blanks);
+                }
+        this.blanks.join(' ');   
     } else {
         console.log("See you later!");
         user.play();
@@ -64,3 +61,6 @@ function Game() {
     })
   }
 }
+
+//Need this line otherwise this file can't connect to index.js
+module.exports = Game;
