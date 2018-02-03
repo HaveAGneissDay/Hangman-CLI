@@ -5,7 +5,7 @@ var Word = require("./Word.js");
 //requires the letter file to check if you got it right or not
 var Letter = require("./Letter.js");
 function Game() {
-
+    
    var chosenWord = "";
     this.guesses = 10;
     this.wins = 0;
@@ -45,12 +45,10 @@ function Game() {
 
             //get a random word
             if(input.confirm) {
-                
                 for (var i = 0; i < chosenWord.length; i++) {
-                    this.blanks.push("_");
-                    console.log(this.blanks);
+                    Game.blanks.push("_");
                 }
-        this.blanks.join(' ');   
+        Game.blanks.join(' ');
     } else {
         console.log("See you later!");
         user.play();

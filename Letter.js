@@ -1,9 +1,4 @@
-var letterToBeGuessed = 
-
-
-
-
-
+var letterToBeGuessed =
 
 function (userGuess) {
     //Created a new variable with set false as the defualt value

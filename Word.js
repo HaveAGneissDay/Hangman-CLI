@@ -1,21 +1,21 @@
 // holds your words that you want to use 
 
 var Word = 
-    ['The Hobbit An Unexpected Journey', 
-'The Hobbit The Desolation of Smaug', 
-'The Hobbit The Battle of the Five Armies',
-'The Lord of the Rings The Fellowship of the Ring',
-'The Lord of the Rings The Two Towers',
-'The Lord of The Rings The Return of the King',
-'Star Wars A New Hope',
-'Star Wars Empire Strikes Back',
-'Star Wars Return of the Jedi',
-'Star Wars The Phantom Menace',
-'Star Wars Attack of the Clones',
-'Star Wars Revenge of the Sith',
-'Star War The Force Awakens',
-'Star Wars The Last Jedi',
-'Rouge One A Star Wars Story',
-'Solo A Star Wars Story']
+    ['THE HOBBIT AN UNEXPECTED JOURNEY', 
+'THE HOBBIT THE DESOLATION OF SMAUG', 
+'THE HOBBIT THE BATTLE OF THE FIVE ARMIES',
+'THE LORD OF THE RINGS THE FELLOWSHIP OF THE RING',
+'THE LORD OF THE RINGS THE TWO TOWERS',
+'THE LORD OF THE RINGS THE RETURN OF THE KING',
+'STAR WARS A NEW HOPE',
+'STAR WARS EMPIRE STRIKES BACK',
+'STAR WARS RETURN OF THE JEDI',
+'STAR WARS THE PHANTOM MENACE',
+'STAR WARS ATTACK OF THE CLONES',
+'STAR WARS REVENGE OF THE SITH',
+'STAR WARS THE FORCE AWAKINS',
+'STAR WARS THE LAST JEDI',
+'ROUGE One A STAR WARS STORY',
+'SOLO A STAR WARS STORY']
 
 module.exports = Word ;
