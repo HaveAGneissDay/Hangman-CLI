@@ -38,44 +38,8 @@ function startGame() {
                 }
                 a = blankArray.join(' ');
                 //Displays the number of blanks
-                //Call inquirer 
-                console.log(a);
-                 function guessALetter () {
-                     inquirer.prompt(
-                         {
-                             type: "input",
-                             message: "Guess a letter.",
-                             name: "letter"
-                         }
-                     ).then(
-                         function letterGuessed (letter) {
-                             var isLetterInWord = false;
-                             for (var i = 0; i < numBlanks; i++) {
-                                 if (wordChosen[i] == letter) {
-                                     isLetterInWord = true;
-                                 }
-                             }
-
-                             if (isLetterInWord) {
-                                 for (var i = 0; i < numBlanks; i++) {
-                                     if (wordChosen[i] == letter) {
-                                         blankArray[i] = letter;
-                                     }
-                                 }
-                             } else {
-                                 wrongGuesses.push(letter);
-                                 guessesLeft--;
-                             }
-                             console.log(a + '\n' + "Number of guesses left:" + guessesLeft + '\n' + "Letters already guessed" + wrongGuesses);
-                             
-                            }
-                     )
-
-                 }
-                        
-
-    
-
+                console.log(a + '\n' + "Number of Guesses Left: " + guessesLeft);
+          guessALetter();
 
       }  else {
           console.log("Come back later");
@@ -83,4 +47,59 @@ function startGame() {
       }
     });
 }
+
+
+function guessALetter() {
+    inquirer.prompt(
+        {
+            type: "input",
+            message: "Guess a letter.",
+            name: "letter",
+            validate: function(string) {
+                var letter = new letter;
+                if (letter) {
+                    return true;
+                } else {
+                    return false;
+                    console.log("Enter a letter and only one letter");
+                }
+            }
+        }
+    ).then(
+        function letterGuessed(letter) {
+            var isLetterInWord = false;
+            for (var i = 0; i < numBlanks; i++) {
+                if (wordChosen[i] == letter) {
+                    isLetterInWord = true;
+                }
+            }
+
+            if (isLetterInWord) {
+                for (var i = 0; i < numBlanks; i++) {
+                    if (wordChosen[i] == letter) {
+                        blankArray[i] = letter;
+                    }
+                }
+            } else {
+                wrongGuesses.push(letter);
+                guessesLeft--;
+            }
+            console.log(a + '\n' + "Number of guesses left:" + guessesLeft + '\n' + "Letters already guessed" + wrongGuesses);
+        }
+        )
+
+}
+
+function roundComplete() {
+if (lettersInWord.toString() == blankArray.toString()) {
+    winCount++;
+    console.log("You Won!" + '\n' + "Wins: " + winCount);
+    startGame();
+} else if (guessesLeft === 0) {
+    loseCount++;
+    console.log("You Lost!" + '\n' + "Losses: " + winCount);
+    startGame();
+}
+}
+
 startGame();

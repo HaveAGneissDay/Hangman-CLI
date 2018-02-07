@@ -1,5 +1,5 @@
 var letter = function (userGuess) {
-       this.value = userGuess;
+       this.value = userGuess.toUpperCase();
        this.show = false;
 
     if(this.value == ' ') {
