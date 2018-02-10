@@ -9,7 +9,7 @@ var Letter = require("./Letter.js");
 
 //Variables that I need
 
-var a;
+var placeHolder;
 var winCount = 0;
 var loseCount = 0;
 var blankArray = [];
@@ -18,36 +18,23 @@ var wrongGuesses = [];
 var wordChosen = '';
 var lettersInWord = [];
 var numBlanks = 0;
+var letter ="";
 
 function startGame() {
-    inquirer.prompt({
-        message: "confirm",
-        question: "Shall we play a game?",
-        name: "confirm",
-        default: true
-    }).then(function (confirm) {
-      if (confirm) {
-                guessesLeft = 10;
-                wrongGuesses = [];
-                blankArray = [];
-                wordChosen = Word[Math.floor(Math.random() * Word.length)];
-                lettersInWord = wordChosen.split('');
-                numBlanks = lettersInWord.length;
+                this.guessesLeft = 10;
+                this.wrongGuesses = [];
+                this.blankArray = [];
+                this.wordChosen = Word[Math.floor(Math.random() * Word.length)];
+                this.lettersInWord = wordChosen.split('');
+                this.numBlanks = lettersInWord.length;
                 for (var i = 0; i < numBlanks; i++) {
                     blankArray.push("_");
                 }
-                a = blankArray.join(' ');
+                placeHolder = blankArray.join(' ');
                 //Displays the number of blanks
-                console.log(a + '\n' + "Number of Guesses Left: " + guessesLeft);
+                console.log(placeHolder + '\n' + "Number of Guesses Left: " + guessesLeft);
           guessALetter();
-
-      }  else {
-          console.log("Come back later");
-          startGame();
       }
-    });
-}
-
 
 function guessALetter() {
     inquirer.prompt(
@@ -56,7 +43,7 @@ function guessALetter() {
             message: "Guess a letter.",
             name: "letter",
             validate: function(string) {
-                var letter = new letter;
+                letter = new Letter;
                 if (letter) {
                     return true;
                 } else {
@@ -82,22 +69,22 @@ function guessALetter() {
                 }
             } else {
                 wrongGuesses.push(letter);
-                guessesLeft--;
+                this.guessesLeft--;
             }
-            console.log(a + '\n' + "Number of guesses left:" + guessesLeft + '\n' + "Letters already guessed" + wrongGuesses);
-        }
-        )
+            console.log(placeHolder + '\n' + "Number of guesses left:" + guessesLeft + '\n' + "Letters already guessed" + wrongGuesses);
+        roundComplete();
+        })
 
 }
 
 function roundComplete() {
 if (lettersInWord.toString() == blankArray.toString()) {
-    winCount++;
+    this.winCount++;
     console.log("You Won!" + '\n' + "Wins: " + winCount);
     startGame();
 } else if (guessesLeft === 0) {
-    loseCount++;
-    console.log("You Lost!" + '\n' + "Losses: " + winCount);
+    this.loseCount++;
+    console.log("You Lost!" + '\n' + "Losses: " + loseCount);
     startGame();
 }
 }

@@ -1,18 +1,19 @@
-var letter = function (userGuess) {
-       this.value = userGuess.toUpperCase();
+var Letter = function (userGuess) {
+       this.value = userGuess;
        this.show = false;
 
     if(this.value == ' ') {
 
         this.show = true;
+        return " ";
     }
-    letter.printInfo = function () {
-        if (this.show) {
-            return this.value;
+    Letter.prototype.printInfo = function () {
+        if (this.show === false) {
+            return "_ ";
         }
-        return "_ ";
-    }
+        return this.value;
+}
 }
 
 
-module.exports = letter;
+module.exports = Letter;

@@ -1,6 +1,8 @@
+var letter = require('./letter.js');
+
 // holds your words that you want to use 
 
-var Word = 
+var Wordlist = 
     ['THE HOBBIT AN UNEXPECTED JOURNEY', 
 'THE HOBBIT THE DESOLATION OF SMAUG', 
 'THE HOBBIT THE BATTLE OF THE FIVE ARMIES',
@@ -18,4 +20,4 @@ var Word =
 'ROUGE One A STAR WARS STORY',
 'SOLO A STAR WARS STORY']
 
-module.exports = Word ;
+module.exports = Wordlist ;
