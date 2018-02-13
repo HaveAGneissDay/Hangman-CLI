@@ -1,19 +1,13 @@
-var Letter = function (userGuess) {
-       this.value = userGuess;
-       this.show = false;
-
-    if(this.value == ' ') {
-
-        this.show = true;
-        return " ";
+Letter.prototype.toString = function () {
+    if (this.visible === true) {
+        return this.char;
     }
-    Letter.prototype.printInfo = function () {
-        if (this.show === false) {
-            return "_ ";
-        }
-        return this.value;
-}
-}
+    return "_";
+};
+
+Letter.prototype.getSolution = function () {
+    return this.char;
+};
 
 
 module.exports = Letter;
