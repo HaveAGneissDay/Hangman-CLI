@@ -6,7 +6,7 @@ function Word(word) {
     //     .map - instantiate a new `Letter` for each character and return an array
     //            referred to with the instance variable, `letters`
     this.letters = word.split("").map(function (char) {
-        return new Letter(char);
+        return new Letter(char.toUpperCase());
     });
 }
 Word.prototype.getSolution = function () {

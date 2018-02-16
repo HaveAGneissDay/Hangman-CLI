@@ -17,5 +17,17 @@ Letter.prototype.getSolution = function () {
     return this.char;
 };
 
+// Accepts a user's guess
+Letter.prototype.guess = function (charGuess) {
+    if (charGuess.toUpperCase() === this.char.toUpperCase()) {
+        this.visible = true;
+        return true;
+    }
+
+    // Otherwise return false
+    return false;
+};
+
+
 
 module.exports = Letter;
