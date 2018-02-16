@@ -1,4 +1,4 @@
-var letter = require('./letter.js');
+var Letter = require('./letter.js');
 
 // holds your words that you want to use 
 function Word(word) {
