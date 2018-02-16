@@ -2,7 +2,7 @@ var inquirer = require("inquirer");
 var Word = require("./Word.js");
 var words = require("./words.js");
 
-function Game() {
+ function Game() {
     // Save a reference for `this` in `self` as `this` will change inside of inquirer
     var self = this;
 
@@ -14,7 +14,7 @@ function Game() {
 
     // Creates a new Word object using a random word from the array, asks the user for their guess
     this.nextWord = function () {
-        var randWord = word[Math.floor(Math.random() * word.length)];
+        var randWord = words[Math.floor(Math.random() * words.length)];
         this.currentWord = new Word(randWord);
         console.log('\n' + this.currentWord + '\n');
         this.makeGuess();
@@ -103,4 +103,4 @@ function Game() {
     };
 }
 
-module.export = Game;
+module.exports = Game;
